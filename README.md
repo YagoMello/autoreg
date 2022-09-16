@@ -144,7 +144,7 @@ int main() {
     // Ask the food name
     std::cout << "Select a food:\n";
     
-    // Iterate through the foods in the list
+    // Iterate through the foods on the list
     for(auto & [key, builder] : autoreg::as_list(food_list)) {
         std::cout << "- " << key << "\n";
     }
