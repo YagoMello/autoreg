@@ -20,8 +20,8 @@ The simplest way to ensure the correct initialization order is using a function 
 ```cpp
 #define AUTOREG_STATIC_LIST(name, key_type, base_type) \
 autoreg::list<key_type, base_type> & name() { \
-    static autoreg::list<key_type, base_type> list; \
-    return list; \
+    static autoreg::list<key_type, base_type> static_list; \
+    return static_list; \
 }
 ```
 And a macro for forward declarations, to use in headers:
