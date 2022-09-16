@@ -4,7 +4,7 @@
 /* Automatic Object Registration Library
  * Author:  Yago T. de Mello
  * e-mail:  yago.t.mello@gmail.com
- * Version: 2.3.1 2022-09-16
+ * Version: 2.3.2 2022-09-16
  * License: Apache 2.0
  * C++ >= 11
  */
@@ -30,9 +30,9 @@ limitations under the License.
 
 // Check for type_identity (C++20) support
 #if __cplusplus > 202002L 
-
+    
     #include <type_traits> // std::type_identity
-
+    
     namespace autoreg {
     
     template<typename T>
@@ -40,22 +40,22 @@ limitations under the License.
     
     template<typename T>
     using std::type_identity_t<T>;
-
+    
 #else // __cplusplus > 202002L == false
-
+    
     // lets implement our type identity
-
+    
     namespace autoreg {
-
+    
     template<typename T>
     struct type_identity {
         using type = T;
     };
-
+    
     // the compiler doesn't deduce T
     template<typename T>
     using type_identity_t = typename type_identity<T>::type;
-
+    
 #endif // __cplusplus > 202002L 
 
 
@@ -99,7 +99,7 @@ public:
     ) {
         ls[key] = builder;
     }
-
+    
     // Automatically creates the builder function and saves it to the list.
     template <typename key_type, typename base_type>
     reg(
