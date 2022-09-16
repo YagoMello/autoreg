@@ -58,7 +58,7 @@ autoreg::reg<base> base_reg(list, "base");
 The `build` functions dynamically create the objects:
 ```cpp
 // Raw pointer
-base * obj = autoreg::build(list, key);
+base * obj = autoreg::build(list, key); // dont forget to delete obj later
 
 // Unique pointer
 std::unique_ptr<base> obj_unique = autoreg::build_unique(list, key);
