@@ -2,4 +2,4 @@
 #include "../../autoreg.hpp"
 #include "food.hpp"
 
-AUTOREG_STATIC_LIST_DECL(food_list, std::string, food);
+AUTOREG_STATIC_LIST_DECL(std::string, food, food_list);
