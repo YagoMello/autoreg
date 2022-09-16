@@ -1,12 +1,12 @@
 #ifndef LIBAUTOREG__AUTOREG_HPP
 #define LIBAUTOREG__AUTOREG_HPP
 
-/* Automatic Object Register Library
+/* Automatic Object Registration Library
  * Author:  Yago T. de Mello
  * e-mail:  yago.t.mello@gmail.com
- * Version: 2.3.0 2022-09-16
+ * Version: 2.3.1 2022-09-16
  * License: Apache 2.0
- * C++ > 11
+ * C++ >= 11
  */
 
 /*
