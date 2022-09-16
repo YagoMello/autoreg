@@ -4,7 +4,7 @@
 /* Automatic Object Registration Library
  * Author:  Yago T. de Mello
  * e-mail:  yago.t.mello@gmail.com
- * Version: 2.3.2 2022-09-16
+ * Version: 2.3.3 2022-09-16
  * License: Apache 2.0
  * C++ >= 11
  */
@@ -207,8 +207,8 @@ autoreg::list<key_type, base_type> & name();
 // Simplifies the creation of safe lists
 #define AUTOREG_STATIC_LIST(name, key_type, base_type) \
 autoreg::list<key_type, base_type> & name() { \
-    static autoreg::list<key_type, base_type> list; \
-    return list; \
+    static autoreg::list<key_type, base_type> static_list; \
+    return static_list; \
 }
 
 #endif // LIBAUTOREG__AUTOREG_HPP
