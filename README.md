@@ -24,7 +24,7 @@ autoreg::list<key_type, base_type> & name() { \
     return list; \
 }
 ```
-And a macro for the function signature, to use in headers:
+And a macro for forward declarations, to use in headers:
 ```cpp
 #define AUTOREG_STATIC_LIST_DECL(name, key_type, base_type) \
 autoreg::list<key_type, base_type> & name();
