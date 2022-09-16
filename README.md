@@ -18,7 +18,7 @@ For single .cpp files `autoreg::list<key_type, base_type> list` is enough.
 For multiple files, the list must be initialized before the objects are registered.
 The simplest way to ensure the correct initialization order is using a function with a static var and then returning the var reference. There is a macro to simplify this:
 ```cpp
-#define AUTOREG_STATIC_LIST(name, key_type, base_type) \
+#define AUTOREG_STATIC_LIST(key_type, base_type, name) \
 autoreg::list<key_type, base_type> & name() { \
     static autoreg::list<key_type, base_type> static_list; \
     return static_list; \
@@ -26,7 +26,7 @@ autoreg::list<key_type, base_type> & name() { \
 ```
 And a macro for forward declarations, to use in headers:
 ```cpp
-#define AUTOREG_STATIC_LIST_DECL(name, key_type, base_type) \
+#define AUTOREG_STATIC_LIST_DECL(key_type, base_type, name) \
 autoreg::list<key_type, base_type> & name();
 ```
 
@@ -88,7 +88,7 @@ regs.hpp
 #include "autoreg.hpp"
 #include "food.hpp"
 
-AUTOREG_STATIC_LIST_DECL(food_list, std::string, food);
+AUTOREG_STATIC_LIST_DECL(std::string, food, food_list);
 ```
 
 ### Defining the list
@@ -96,7 +96,7 @@ regs.cpp
 ```cpp
 #include "regs.hpp"
 
-AUTOREG_STATIC_LIST(food_list, std::string, food);
+AUTOREG_STATIC_LIST(std::string, food, food_list);
 ```
 
 ### Creating derived classes and adding to the list
