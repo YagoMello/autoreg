@@ -1,5 +1,5 @@
 FLAGS=-std=c++20 -pipe -Wall -Wextra -Wshadow -Wundef -Wconversion -Wdisabled-optimization -Wlogical-op -Wwrite-strings
-DEBUG=-Og -ggdb3 -fsignaling-nans -D DEBUG -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -D DEBUG_SUPERNODES
+DEBUG=-Og -ggdb3 -fsignaling-nans -D DEBUG -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined
 RELEASE=-O3 -D NDEBUG -flto=11 -fuse-linker-plugin
 ASM=-S -fverbose-asm
 
