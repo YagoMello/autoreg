@@ -45,7 +45,7 @@ class base {...};
 class derived : public base {...};
 
 // The list to register the objects
-AUTOREG_STATIC_LIST(list, std::string, base);
+AUTOREG_STATIC_LIST(std::string, base, list);
 
 // Registering the derived class
 autoreg::reg<derived> derived_reg(list, "derived");
